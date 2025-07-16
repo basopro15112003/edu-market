@@ -34,9 +34,9 @@ export function Header() {
   return (
     <>
       {" "}
-      <header className="my-3 flex items-center rounded-md border-2 border-black p-3 shadow-sm transition duration-300 hover:scale-101 sm:h-16 dark:border-white">
+      <header className="my-3 mt-4 flex items-center rounded-md border-2 border-black p-4 shadow-sm transition duration-300 hover:scale-101 sm:h-17 dark:border-white">
         <Link to={"/"}>
-        <div className="justify-center items-center text-center hover:scale-105 transition-all duration-300 hover:cursor-pointer">
+        <div className="justify-center items-center text-center hover:scale-105 transition-all  duration-300 hover:cursor-pointer">
         <p className="font-sans italic text-3xl font-extrabold text-green-600">
           edu-market
         </p>
