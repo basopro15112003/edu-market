@@ -53,7 +53,7 @@ export function DetailProduct({
             <img
               src={selectedProduct.img}
               alt={selectedProduct.fullName}
-              className="h-73 w-full rounded-md object-cover"
+              className="h-50 md:h-73 w-full rounded-md object-cover"
               onError={(e) => (e.currentTarget.src = "/placeholder.png")}
             />
           </div>
@@ -65,18 +65,30 @@ export function DetailProduct({
             {/* Rating */}
             <div className="mb-2 flex items-center gap-2">
               <div className="flex text-yellow-400">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <Star
-                    key={i}
-                    fill={
-                      i < Math.round(selectedProduct.rating ?? 0)
-                        ? "currentColor"
-                        : "none"
-                    }
-                    stroke="currentColor"
-                    className="h-5 w-5"
-                  />
-                ))}
+                {Array.from({ length: 5 }).map((_, i) => {
+                  const fullStars = Math.floor(selectedProduct.rating ?? 0);
+                  const hasHalfStar = (selectedProduct.rating ?? 0) - fullStars >= 0.5;
+                  if (i < fullStars) {
+                    // Sao đầy
+                    return <Star key={i} fill="currentColor" stroke="currentColor" className="h-5 w-5" />;
+                  } else if (i === fullStars && hasHalfStar) {
+                    // Sao nửa
+                    return (
+                      <svg key={i} viewBox="0 0 24 24" className="h-5 w-5">
+                        <defs>
+                          <linearGradient id="half">
+                            <stop offset="50%" stopColor="currentColor" />
+                            <stop offset="50%" stopColor="transparent" stopOpacity="1" />
+                          </linearGradient>
+                        </defs>
+                        <Star fill="url(#half)" stroke="currentColor" />
+                      </svg>
+                    );
+                  } else {
+                    // Sao rỗng
+                    return <Star key={i} fill="none" stroke="currentColor" className="h-5 w-5" />;
+                  }
+                })}
               </div>
               <span className="text-lg font-bold">
                 {selectedProduct.rating ?? 0}
