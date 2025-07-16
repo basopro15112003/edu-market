@@ -202,7 +202,7 @@ export function ProductCard() {
                       <div className="relative">
                         <img
                           src={displayedProducts[1].img}
-                          className="w-70 rounded-md object-cover md:w-50 lg:w-50"
+                          className="w-full rounded-md object-cover md:w-50 lg:w-50"
                           alt=""
                         />
                         <div className="absolute top-1 right-1 flex h-8 w-8 flex-1 items-center justify-center rounded-full bg-white hover:scale-105">
@@ -272,7 +272,7 @@ export function ProductCard() {
                       <div className="relative">
                         <img
                           src={displayedProducts[2].img}
-                          className="w-70 rounded-md object-cover md:w-50 lg:w-50"
+                          className="w-full rounded-md object-cover md:w-50 lg:w-50"
                           alt=""
                         />{" "}
                         <div className="absolute top-1 right-1 flex h-8 w-8 flex-1 items-center justify-center rounded-full bg-white">
