@@ -8,6 +8,7 @@ import { DetailProduct } from "../components/pages/detail-product";
 import { Toaster } from "../components/ui/toaster";
 import { Heart } from "lucide-react";
 import { PaginationPage } from "../components/pages/paging";
+import { Analytics } from "@vercel/analytics/next";
 
 export function FavoriteProducts({ products }: { products: Product[] }) {
   // #region State
@@ -129,6 +130,7 @@ export function FavoriteProducts({ products }: { products: Product[] }) {
         selectedProduct={selectedProduct}
       />{" "}
       <Toaster></Toaster>
+      <Analytics></Analytics>
     </div>
   );
 }
