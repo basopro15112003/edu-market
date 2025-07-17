@@ -5,7 +5,6 @@ import { Header } from "../components/pages/header";
 import { ProductCard } from "../components/pages/product";
 import { Toaster } from "../components/ui/toaster";
 import { Skeleton } from "../components/ui/skeleton";
-import { Analytics } from "@vercel/analytics/next"
 
 function HomePage() {
   const [loading, setLoading] = useState(true);
@@ -51,7 +50,6 @@ function HomePage() {
         )}
       </div>
       <Toaster />
-      <Analytics></Analytics>
     </>
   );
 }
